@@ -1,9 +1,9 @@
 export const ShortInfo = ({ person }) => {
-	console.log(person.name);
+	const { name, age } = person;
 	return (
 		<div>
-			<h3>{person.name}</h3>
-			<span>{person.age} лет</span>
+			<h3>{name}</h3>
+			<span>{age} лет</span>
 		</div>
 	);
 };

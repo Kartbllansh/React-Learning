@@ -1,4 +1,7 @@
 export default function SomeSubject({ subjects }) {
+	if (!subjects) {
+		return null;
+	}
 	console.log(subjects);
 	return (
 		<div>
