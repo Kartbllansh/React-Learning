@@ -1,0 +1,13 @@
+.root {
+	cursor: pointer;
+	transition: opacity 0.2s, transform 0.2s;
+
+	&:hover {
+		opacity: 0.9;
+		transform: scale(1.1);
+	}
+}
+
+.container {
+	padding: 10px;
+}

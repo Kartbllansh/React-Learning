@@ -2,6 +2,7 @@ import { array } from '@/constant/arr';
 import React from 'react';
 
 import { Person } from '../Person/Person';
+import { Header } from '../Header/Header';
 
 export const Home = () => {
 	//return React.createElement('div', {
@@ -11,6 +12,7 @@ export const Home = () => {
 	//});
 	return (
 		<div>
+			<Header />
 			{array.map(person => (
 				<div key={person.id}>
 					<Person person={person} />

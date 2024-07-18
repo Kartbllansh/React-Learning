@@ -7,7 +7,7 @@ export default function SomeSubject({ subjects }) {
 		<div>
 			<h4>Некие школьные предметы:</h4>
 			{Object.keys(subjects).map(sub => (
-				<p>
+				<p key={subjects[sub]}>
 					{sub}: {subjects[sub]}
 				</p>
 			))}
