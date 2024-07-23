@@ -8,7 +8,7 @@ export const Header = ({ className }) => {
 	return (
 		<header className={classNames(styles.root)}>
 			<Image src={'/logo.png'} width={115} height={18} alt='' />
-			<Hotel />
+			{/*<Hotel />*/}
 		</header>
 	);
 };

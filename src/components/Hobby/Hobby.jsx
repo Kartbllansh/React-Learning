@@ -1,3 +1,4 @@
+import { Rating } from '../Rating/Rating';
 import styles from './hobby.module.scss';
 import classNames from 'classnames';
 
@@ -5,6 +6,8 @@ const textStyles = {
 	primary: styles.primary,
 	secondary: styles.secondary,
 };
+
+const maxRating = 5;
 
 export function Hobby({ nam, hobbies, disabled, className, type = 'primary' }) {
 	if (!hobbies?.length) {
@@ -30,6 +33,11 @@ export function Hobby({ nam, hobbies, disabled, className, type = 'primary' }) {
 					>
 						{hobby}
 					</h5>
+					<Rating
+						maxRating={maxRating}
+						value={Math.floor(Math.random() * 5)}
+						className={null}
+					/>
 				</div>
 			))}
 		</div>

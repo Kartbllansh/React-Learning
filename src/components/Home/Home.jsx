@@ -1,23 +1,25 @@
+'use client';
 import { array } from '@/constant/arr';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { Person } from '../Person/Person';
 import { Header } from '../Header/Header';
+import { Button } from '../Button/Button';
+import { Tabs } from '../Tabs/Tabs';
+import { NewFormMessage } from '../NewFormMessage/NewFormMessage';
 
 export const Home = () => {
-	//return React.createElement('div', {
-	//children: array.map(person =>
-	//React.createElement('div', { children: person.name })
-	//),
-	//});
+	const [activePersonIndex, setActivePersonIndex] = useState(0);
+	const activePerson = array[activePersonIndex];
+	useEffect(() => {
+		console.log('Gotovo'), [activePersonIndex];
+	});
 	return (
 		<div>
 			<Header />
-			{array.map(person => (
-				<div key={person.id}>
-					<Person person={person} />
-				</div>
-			))}
+			<Tabs array={array} onTabClick={setActivePersonIndex} />
+			<Person key={activePerson.id} person={activePerson} />
+			<NewFormMessage />
 		</div>
 	);
 };
@@ -29,7 +31,6 @@ function HomeJSX() {
 			{array.map(person => (
 				<div key={person.id}>
 					{' '}
-					//Добавляет к элементу React уникальный ключ
 					<h3>person.name</h3>
 				</div>
 			))}
